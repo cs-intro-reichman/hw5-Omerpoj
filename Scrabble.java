@@ -133,7 +133,7 @@ public class Scrabble {
 			// the user until the user enter the ENTER character.
 			String input = in.readString();
 			if (input == "n") {
-				playGame();
+				playHand(input);
 			}
 			if (input == "e") {
 				break;
