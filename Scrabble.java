@@ -66,7 +66,7 @@ public class Scrabble {
 		int score = 0;
 		word = word.toLowerCase();
 		for(int i = 0;i < word.length();i++){
-			if (word != "" && ((int)word.charAt(i) - 'a') <= 0 && ((int)word.charAt(i) - 'a') >= 25) {
+			if (word != "") {
 				score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
 			}
 		}
@@ -107,7 +107,7 @@ public class Scrabble {
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString();
-			if (MyString.subsetOf(".", input)) {
+			if (input == ".") {
 				break;
 			}
 			score += wordScore(input);
