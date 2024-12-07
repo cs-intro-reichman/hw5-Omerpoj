@@ -81,7 +81,6 @@ public class Scrabble {
 		int score = 0;
 		for(int i = 0;i < word.length();i++){
 			score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
-			System.out.println(	(int)word.charAt(i) - (int)'a');
 		}
 		score *= word.length();
 		if (word.length() == HAND_SIZE) {
