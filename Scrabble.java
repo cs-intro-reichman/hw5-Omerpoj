@@ -80,12 +80,14 @@ public class Scrabble {
 	public static int wordScore(String word) {
 		int score = 0;
 		for(int i = 0;i < word.length();i++){
-			score += SCRABBLE_LETTER_VALUES[word.charAt(i) - 'a'];
+			score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
+			System.out.println(	(int)word.charAt(i) - (int)'a');
 		}
+		score *= word.length();
 		if (word.length() == HAND_SIZE) {
 			score += 50;
 		}
-		if (subsetOf(word,"runi")) {
+		if (subsetOf(word,"runi") && word != "") {
 			score += 1000;
 		}
 		return score;
@@ -169,7 +171,7 @@ public class Scrabble {
 		//// Uncomment the test you want to run
 		////testBuildingTheDictionary();  
 		////testScrabbleScore();    
-		testCreateHands();  
+		///testCreateHands();  
 		////testPlayHands();
 		////playGame();
 	}
