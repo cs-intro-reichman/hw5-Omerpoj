@@ -104,24 +104,27 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-        int index = 0;
-        boolean isIn = false;
+        char[] arrStr1= new char[str1.length()];
+        for(int i = 0;i < str1.length();i++){
+            arrStr1[i] = str1.charAt(i);
+        }
         String finalStr = "";
         for(int i = 0;i < str2.length();i++){
-            for(int j = 0;j < str1.length();j++){
-                index = i;
-                if (str1.charAt(j) == str2.charAt(i)) {
-                    isIn = true;
-                    index = j;
+            for(int j = 0;j < arrStr1.length;j++){
+                if (arrStr1[j] == str2.charAt(i)) {
+                    arrStr1[j] = '0';
                     break;
                 }
             }
-            if (!isIn) {
-                finalStr += str1.charAt(index);
+        }
+        for(int i = 0;i < arrStr1.length;i++){
+            if (arrStr1[i] != '0') {
+                finalStr += arrStr1[i];
             }
         }
         return finalStr;
     }
+    
 
     /**
      * Returns a string consisting of the given string, with the given 
