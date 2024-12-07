@@ -73,11 +73,10 @@ public class MyString {
      */
     public static String spacedString(String str) {
         String finalStr = "";
-        for(int i = 0;i < str.length() - 1;i++){
-            finalStr += str.charAt(i);
+        for(int i = 0;i < str.length();i++){
             finalStr += " ";
+            finalStr += str.charAt(i);
         }
-        finalStr += str.charAt(str.length() - 1);
         return finalStr;
     }
   
