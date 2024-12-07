@@ -114,6 +114,9 @@ public class Scrabble {
 				score += wordScore(input);
 				hand = MyString.remove(hand, input);
 			}
+			else{
+				break;
+			}
 
 		}
 		if (hand.length() == 0) {
