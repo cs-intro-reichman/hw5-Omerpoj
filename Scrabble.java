@@ -115,7 +115,7 @@ public class Scrabble {
 				hand = MyString.remove(hand, input);
 			}
 			else{
-				break;
+				System.out.println(	"Invalid word. Try again.");
 			}
 
 		}
