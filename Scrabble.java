@@ -66,7 +66,9 @@ public class Scrabble {
 		int score = 0;
 		word = word.toLowerCase();
 		for(int i = 0;i < word.length();i++){
-			score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
+			if (word != "") {
+				score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
+			}
 		}
 		score *= word.length();
 		if (word.length() == HAND_SIZE) {
