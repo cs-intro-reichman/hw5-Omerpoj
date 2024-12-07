@@ -110,8 +110,8 @@ public class Scrabble {
 			if (input == ".") {
 				break;
 			}
+			score += wordScore(input);
 			hand = MyString.remove(hand, input);
-			score = wordScore(input);
 
 		}
 		if (hand.length() == 0) {
