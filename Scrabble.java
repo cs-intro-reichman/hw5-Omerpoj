@@ -98,7 +98,13 @@ public class Scrabble {
 		String returnedHand = MyString.randomStringOfLetters(HAND_SIZE - 2);
 		returnedHand = MyString.insertRandomly('a', returnedHand);
 		returnedHand = MyString.insertRandomly('e', returnedHand);
-		return returnedHand;
+		String finalHand = "";
+		for(int i = 0;i < returnedHand.length();i++){
+			if (returnedHand.charAt(i) != ' ') {
+				finalHand += returnedHand.charAt(i);
+			}
+		}
+		return finalHand;
 	}
 	
     // Runs a single hand in a Scrabble game. Each time the user enters a valid word:
