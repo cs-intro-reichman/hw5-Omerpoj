@@ -66,7 +66,7 @@ public class Scrabble {
 		int score = 0;
 		word = word.toLowerCase();
 		for(int i = 0;i < word.length();i++){
-			if (word != "") {
+			if (word != "" && ((int)word.charAt(i) - 'a') <= 0 && ((int)word.charAt(i) - 'a') >= 25) {
 				score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 'a'];
 			}
 		}
