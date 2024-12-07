@@ -104,11 +104,12 @@ public class Scrabble {
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString();
-			hand = MyString.remove(hand, input);
-			score = wordScore(input);
 			if (input == ".") {
 				break;
 			}
+			hand = MyString.remove(hand, input);
+			score = wordScore(input);
+
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
@@ -131,14 +132,14 @@ public class Scrabble {
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enter the ENTER character.
 			String input = in.readString();
-			if (input == "a") {
+			if (input == "n") {
 				playGame();
 			}
 			if (input == "e") {
 				break;
 			}
-			if (input != "a" || input != "e" || input == "") {
-				System.out.println("playGame() method exists and can be called");
+			if (input != "n" || input != "e" || input == "") {
+				System.out.println(	"error");
 				break;
 			}
 			//// Replace the following break statement with code
@@ -151,8 +152,8 @@ public class Scrabble {
 		////testBuildingTheDictionary();  
 		////testScrabbleScore();    
 		///testCreateHands();  
-		////testPlayHands();
-		playGame();
+		testPlayHands();
+		////playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
