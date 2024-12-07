@@ -42,21 +42,16 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-        boolean isIn = false;
-        char[] arr = str1.toCharArray();
-        for(int i = 0;i < arr.length;i++){
-            isIn = false;
-            for(int j = 0;j < str2.length();j++){
-                if (arr[i] == str2.charAt(j)) {
-                    isIn = true;
-                }
-            }
-            if (!isIn) {
-                arr[i] = '0';
-            }
+        char[] str1Arr = new char[26];
+        char[] str2Arr = new char[26];
+        for(int i = 0;i < str1.length();i++){
+            str1Arr[(int)str1.charAt(i) - 'a']++;
         }
-        for(int i = 0;i < arr.length;i++){
-            if (arr[i] == '0') {
+        for(int i = 0;i < str2.length();i++){
+            str2Arr[(int)str2.charAt(i) - 'a']++;
+        }
+        for(int i = 0;i < str1Arr.length;i++){
+            if (str1Arr[i] > str2Arr[i]) {
                 return false;
             }
         }

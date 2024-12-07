@@ -137,8 +137,9 @@ public class Scrabble {
 			if (input == "e") {
 				break;
 			}
-			if (input != "a" || input != "e") {
-				System.out.println("error, please write a or e");
+			if (input != "a" || input != "e" || input == "") {
+				System.out.println("playGame() method exists and can be called");
+				break;
 			}
 			//// Replace the following break statement with code
 			//// that completes the game playing loop
@@ -151,7 +152,7 @@ public class Scrabble {
 		////testScrabbleScore();    
 		///testCreateHands();  
 		////testPlayHands();
-		////playGame();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
