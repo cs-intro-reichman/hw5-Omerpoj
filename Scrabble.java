@@ -140,7 +140,6 @@ public class Scrabble {
 				break;
 			}
 			if (input != "n" || input != "e" || input == "") {
-				System.out.println(	"error");
 				break;
 			}
 			//// Replace the following break statement with code
