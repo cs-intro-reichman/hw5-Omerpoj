@@ -58,21 +58,6 @@ public class Scrabble {
 		}
 		return false;
 	}
-	public static boolean subsetOf(String str1, String str2) {
-        boolean isIn = false;
-        for(int i = 0;i < str1.length();i++){
-            isIn = false;
-            for(int j = 0;j < str2.length();j++){
-                if (str1.charAt(i) == str2.charAt(i)) {
-                    isIn = true;
-                }
-            }
-            if (!isIn) {
-                return false;
-            }
-        }
-        return true;
-    }
 	
 	// Returns the Scrabble score of the given word.
 	// If the length of the word equals the length of the hand, adds 50 points to the score.
@@ -86,7 +71,7 @@ public class Scrabble {
 		if (word.length() == HAND_SIZE) {
 			score += 50;
 		}
-		if (subsetOf(word,"runi") && word != "") {
+		if (MyString.subsetOf(word,"runi") && word != "") {
 			score += 1000;
 		}
 		return score;

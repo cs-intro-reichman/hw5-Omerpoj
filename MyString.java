@@ -43,14 +43,20 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
         boolean isIn = false;
-        for(int i = 0;i < str1.length();i++){
+        char[] arr = str1.toCharArray();
+        for(int i = 0;i < arr.length;i++){
             isIn = false;
             for(int j = 0;j < str2.length();j++){
-                if (str1.charAt(i) == str2.charAt(i)) {
+                if (arr[i] == str2.charAt(j)) {
                     isIn = true;
                 }
             }
             if (!isIn) {
+                arr[i] = '0';
+            }
+        }
+        for(int i = 0;i < arr.length;i++){
+            if (arr[i] == '0') {
                 return false;
             }
         }
@@ -71,7 +77,7 @@ public class MyString {
             finalStr += str.charAt(i);
             finalStr += " ";
         }
-        finalStr += str.charAt(str.length());
+        finalStr += str.charAt(str.length() - 1);
         return finalStr;
     }
   
