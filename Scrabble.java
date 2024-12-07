@@ -110,8 +110,10 @@ public class Scrabble {
 			if (input == ".") {
 				break;
 			}
-			score += wordScore(input);
-			hand = MyString.remove(hand, input);
+			if (isWordInDictionary(hand)) {
+				score += wordScore(input);
+				hand = MyString.remove(hand, input);
+			}
 
 		}
 		if (hand.length() == 0) {
