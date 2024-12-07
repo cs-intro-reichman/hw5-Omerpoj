@@ -110,7 +110,7 @@ public class Scrabble {
 			if (input == ".") {
 				break;
 			}
-			if (isWordInDictionary(hand)) {
+			if (isWordInDictionary(hand) && hand != "") {
 				score += wordScore(input);
 				hand = MyString.remove(hand, input);
 			}
@@ -156,11 +156,11 @@ public class Scrabble {
 
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
-		////testBuildingTheDictionary();  
-		////testScrabbleScore();    
-		///testCreateHands();  
+		testBuildingTheDictionary();  
+		testScrabbleScore();    
+		testCreateHands();  
 		testPlayHands();
-		////playGame();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
