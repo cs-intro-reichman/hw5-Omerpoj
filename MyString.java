@@ -67,10 +67,11 @@ public class MyString {
      */
     public static String spacedString(String str) {
         String finalStr = "";
-        for(int i = 0;i < str.length();i++){
+        for(int i = 0;i < str.length() - 1;i++){
             finalStr += str.charAt(i);
             finalStr += " ";
         }
+        finalStr += str.charAt(str.length());
         return finalStr;
     }
   
@@ -88,7 +89,7 @@ public class MyString {
         String str = "";
         for(int i = 0;i < n;i++){
             char ch = (char)((97+(int)(Math.random()*26)));
-            str += ch + " ";
+            str += ch ;
         }
         return str;
     }
